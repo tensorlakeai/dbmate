@@ -70,12 +70,14 @@ func TestLoadEnvFiles(t *testing.T) {
 		env := os.Environ()
 		os.Clearenv()
 
+		//nolint:usetesting
 		err = os.Chdir("fixtures/loadEnvFiles")
 		if err != nil {
 			t.Fatal(err)
 		}
 
 		t.Cleanup(func() {
+			//nolint:usetesting
 			err := os.Chdir(cwd)
 			if err != nil {
 				t.Fatal(err)
