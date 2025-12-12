@@ -40,6 +40,7 @@ func newTestDB(t *testing.T, u *url.URL) *dbmate.DB {
 		require.NoError(t, err)
 	}
 
+	//nolint:usetesting
 	err = os.Chdir(rootDir + "/testdata")
 	require.NoError(t, err)
 
