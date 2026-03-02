@@ -1,5 +1,5 @@
 # development stage
-FROM golang:1.25.7 as dev
+FROM golang:1.26.0 as dev
 WORKDIR /src
 ENV PATH="/src/typescript/node_modules/.bin:${PATH}"
 RUN git config --global --add safe.directory /src
@@ -18,7 +18,7 @@ RUN apt-get update \
 
 # golangci-lint
 RUN curl -fsSL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh \
-  | sh -s -- -b /usr/local/bin v2.7.2
+  | sh -s -- -b /usr/local/bin v2.10.1
 
 # download modules
 COPY go.* /src/
